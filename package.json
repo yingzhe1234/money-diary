@@ -8,9 +8,13 @@
     "start": "next start",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "db:generate": "set -a && . ./.env.local && set +a && prisma generate",
+    "db:migrate": "set -a && . ./.env.local && set +a && prisma migrate dev",
+    "db:studio": "set -a && . ./.env.local && set +a && prisma studio"
   },
   "dependencies": {
+    "@prisma/client": "^6.16.0",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"
@@ -24,6 +28,7 @@
     "eslint-config-next": "16.1.6",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.8.1",
+    "prisma": "^6.16.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

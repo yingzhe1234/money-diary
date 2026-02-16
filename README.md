@@ -32,6 +32,7 @@ This project is also used to practice an AI-coding workflow (iterate in small pa
 npm install
 npm run dev
 ```
+
 Open http://localhost:3000
 
 ## Scripts
@@ -42,3 +43,29 @@ Open http://localhost:3000
 - `npm run lint` run ESLint
 - `npm run format` auto-format with Prettier
 - `npm run format:check` check formatting with Prettier
+- `npm run db:generate` generate Prisma client
+- `npm run db:migrate` run Prisma dev migrations
+- `npm run db:studio` open Prisma Studio
+
+## Database Setup (Part 4A)
+
+1. Set `DATABASE_URL` in `.env.local`:
+
+```bash
+DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE?sslmode=require"
+```
+
+2. Run Prisma generate + migration:
+
+```bash
+npm run db:generate
+npm run db:migrate
+```
+
+3. Open Prisma Studio:
+
+```bash
+npm run db:studio
+```
+
+Then open the URL shown by Studio and inspect the `Transaction` model (`transactions` table).

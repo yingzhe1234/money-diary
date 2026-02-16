@@ -22,6 +22,7 @@
 ## Data Model (V0)
 
 Transaction:
+
 - id: uuid
 - occurredAt: ISO string
 - amountCents: integer (cents)
