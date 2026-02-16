@@ -1,24 +1,38 @@
 ## money-diary
 
-A personal expense tracking MVP built with Next.js App Router, TypeScript, and Tailwind CSS.
+A personal expense tracking + analytics MVP built with Next.js App Router, TypeScript, and Tailwind CSS.
+This project is also used to practice an AI-coding workflow (iterate in small parts, keep architecture clean, and ship usable increments).
 
-## Part 0 Status
+## Progress
 
-- [x] Next.js app scaffolded (App Router + TypeScript)
-- [x] Tailwind CSS configured
-- [x] ESLint + Prettier configured
-- [x] Shared layout with top navigation
-- [x] Placeholder pages:
-  - `/` Add Expense
-  - `/dashboard` Monthly Dashboard
+- [x] Part 0: scaffold + tooling (Next.js App Router, TS, Tailwind, ESLint, Prettier)
+- [x] Part 1: local transaction data layer (localStorage v1)
+- [x] Part 2: Add Expense form + recent transactions list
+- [x] Part 3: Monthly dashboard analytics (tables, no charts)
+- [ ] Part 4: Database + API layer (Postgres + Prisma + route handlers)
+- [ ] Part 5: Auth + per-user data isolation
+- [ ] Part 6: ML features (auto categorization + feedback loop)
+
+## Current Features (Phase 3)
+
+- Add expense with validation (string-based dollars → cents conversion)
+- LocalStorage persistence with versioned key
+- Double-submit prevention
+- Monthly dashboard:
+  - Month selector
+  - Total monthly spending
+  - Category breakdown (table)
+  - Top merchants (table)
+- SSR-safe client components
+- Hydration mismatch fixed
 
 ## Run Locally
 
 ```bash
+npm install
 npm run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
 ## Scripts
 
@@ -28,10 +42,3 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - `npm run lint` run ESLint
 - `npm run format` auto-format with Prettier
 - `npm run format:check` check formatting with Prettier
-
-## Roadmap
-
-- [ ] Part 1: local transaction data layer
-- [ ] Part 2: Add Expense page form + local persistence
-- [ ] Part 3: Monthly dashboard analytics
-- [ ] Part 4+: filters, insights, DB/auth
